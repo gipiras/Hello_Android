@@ -2,6 +2,8 @@ package com.hallo.gian_lucapiras.hello_android;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +25,23 @@ public class MainActivity extends AppCompatActivity {
         eingabe = (EditText) findViewById(R.id.eingabe);
         weiter_fertig = (Button) findViewById(R.id.weiter_fertig);
 
+        eingabe.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                weiter_fertig.setEnabled(s.length() > 0);
+            }
+        });
+        weiter_fertig.setEnabled(false);
         first_Click = true;
 
         nachricht.setText(R.string.willkommen);

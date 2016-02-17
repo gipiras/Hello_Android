@@ -15,4 +15,6 @@
     <string name="weiter">Weiter</string>
     <string name="fertig">Fertig</string>
 
+    <!-- Lückenfüller -->
+    <string name="vorname_nachname">Vorname Nachname</string>
 </resources>
